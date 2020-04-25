@@ -8,7 +8,9 @@ package com.jack.main.services;
 
 import com.jack.main.player.BlackjackPlayers;
 import com.jack.main.player.RegisterUserDTO;
+
 import com.jack.main.repositories.RegisterUserRepo;
+
 
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +52,7 @@ public class RegisterUserInterfaceImplementation implements RegisterUserInterfac
         theBlackjackPlayer.setUsername(userdto.getUsername());
         theBlackjackPlayer.setEmail(userdto.getEmail());
         theBlackjackPlayer.setPassword(passwordEncoder.encode(userdto.getPassword()));
+        theBlackjackPlayer.setRoleId(userdto.getRoleId());
         
         return registerUserRepo.save(theBlackjackPlayer);
 

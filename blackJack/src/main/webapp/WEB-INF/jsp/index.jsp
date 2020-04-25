@@ -4,4 +4,4 @@
     Author     : vatso
 --%>
 
-<%response.sendRedirect("registration/showRegisterForm");%>
+<%response.sendRedirect("signIn/showLoginForm");%>

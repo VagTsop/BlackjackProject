@@ -14,7 +14,7 @@
     <body>
         <table>
             <tr>
-                <td>Welcome ${Username}</td>
+                <td>Welcome ${theBlackjackPlayer.username}</td>
             </tr>
             <tr>
             </tr>
@@ -25,5 +25,6 @@
                 </td>-->
             </tr>
         </table>
+            <a href="jointable">Join Table</a>
     </body>
     </html>

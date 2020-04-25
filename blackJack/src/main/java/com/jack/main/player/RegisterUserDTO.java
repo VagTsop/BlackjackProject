@@ -27,9 +27,25 @@ public class RegisterUserDTO {
     
     private byte[] fileData;
 
+    private  Roles roleId; 
+
     public RegisterUserDTO() {
-        
     }
+
+    
+    public RegisterUserDTO(String firstname, String lastname, String username, String password, String matchingpassword, String email, String fileName, byte[] fileData, Roles roleId) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.username = username;
+        this.password = password;
+        this.matchingpassword = matchingpassword;
+        this.email = email;
+        this.fileName = fileName;
+        this.fileData = fileData;
+        this.roleId = roleId;
+    }
+    
+    
 
     public String getFirstname() {
         return firstname;
@@ -96,7 +112,13 @@ public class RegisterUserDTO {
     }
 
   
-     
+     public Roles getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Roles roleId) {
+        this.roleId = roleId;
+    }
     
     
     

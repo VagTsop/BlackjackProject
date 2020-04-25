@@ -9,6 +9,7 @@ import com.jack.main.player.BlackjackPlayers;
 import com.jack.main.player.RegisterUserDTO;
 import com.jack.main.services.RegisterUserInterface;
 import com.jack.main.validator.RegisterValidator;
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -21,8 +22,6 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-
 
 @Controller
 
@@ -57,7 +56,7 @@ public class Login {
     }
 
     @PostMapping("/signedIn")
-    public String login(@Valid RegisterUserDTO userdto, BindingResult result) {
+    public String login(@Valid RegisterUserDTO userdto, BindingResult result, HttpServletRequest request) {
 
         BlackjackPlayers theBlackjackPlayer = loginuserInterface.findByUsername(userdto.getUsername());
         try {
@@ -70,8 +69,13 @@ public class Login {
             return "ErrorPage";
 
         }
-
+        request.setAttribute("theBlackjackPlayer", theBlackjackPlayer);
         return "Welcome";
     }
 
+    @GetMapping(value = "/jointable")
+    public String joinTable() {
+
+        return "table";
+    }
 }

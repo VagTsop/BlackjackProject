@@ -13,7 +13,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -86,6 +88,9 @@ public class BlackjackPlayers implements Serializable {
     @NotNull
     @Column(name = "active")
     private boolean active;
+    @JoinColumn(name = "role_id", referencedColumnName = "role_id")
+    @ManyToOne(optional = false)
+    private Roles roleId;
 
     public BlackjackPlayers() {
     }
@@ -182,6 +187,14 @@ public class BlackjackPlayers implements Serializable {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public Roles getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Roles roleId) {
+        this.roleId = roleId;
     }
 
     @Override

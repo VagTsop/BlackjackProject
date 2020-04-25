@@ -7,8 +7,11 @@ package com.jack.main.controllers;
 
 import com.jack.main.player.BlackjackPlayers;
 import com.jack.main.player.RegisterUserDTO;
+import com.jack.main.player.Roles;
 import com.jack.main.services.RegisterUserInterface;
+import com.jack.main.services.RoleInterface;
 import com.jack.main.validator.RegisterValidator;
+import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,7 +36,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class Registration {
      
    
-      
+    @Autowired
+    RoleInterface roleint;
 
     @Autowired
     RegisterUserInterface registerUserInterface;
@@ -49,15 +53,20 @@ public class Registration {
         return new RegisterUserDTO();
 
     }
+    
+    
+    
 
     @RequestMapping("/showRegisterForm")
     public String showForm(Model theModel) {
 
         RegisterUserDTO userdto = new RegisterUserDTO();
-
+      
+        List<Roles> theroles = roleint.getAllRoles();
        
         theModel.addAttribute("newuser", userdto);
-       
+        theModel.addAttribute("rolesapp", theroles);
+        
         return "registrationForm";
 
     }
