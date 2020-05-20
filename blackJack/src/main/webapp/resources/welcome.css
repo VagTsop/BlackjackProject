@@ -1,0 +1,31 @@
+
+body {
+    background: url('https://www.daddyslots.com/wp-content/uploads/2018/08/blackjack.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#welcome{
+    color: black;
+    font-size: 50px;
+    font-family: sans-serif;
+}
+
+#contactButton {
+    color: black;
+    position: absolute;
+    bottom: 100px;
+    width: 50%;
+    font-size: 30px;
+}
+
+td{
+    color: black;
+    font-size: 20px;
+}
+
+h3{
+    color: black;
+}

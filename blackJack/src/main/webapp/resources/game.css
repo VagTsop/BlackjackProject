@@ -1,0 +1,17 @@
+
+#table{
+    background-image: url("https://www.partyrocks.co.uk/ekmps/shops/f7ee2d/images/casino-felt-blackjack-tablecover-5353-p.jpg");
+    height: 580px;
+    
+}
+
+#gamebuttons{
+    background: gray;
+    height: 130px;
+    
+}
+
+#actions{
+    margin-top:20px; 
+    margin-bottom: 20px;
+}
